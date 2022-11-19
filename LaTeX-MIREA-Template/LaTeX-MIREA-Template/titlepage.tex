@@ -1,0 +1,72 @@
+\begin{titlepage}
+	\begin{center}
+		\includegraphics[width=3cm,height=3cm]{MIREA_logo.png}
+		
+		\hfill \break
+		{\small МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ}
+		
+		Федеральное государственное бюджетное образовательное учреждение высшего образования
+	
+		\textbf{<<МИРЭА – Российский технологический университет>>}
+		
+		\textbf{РТУ МИРЭА}
+		
+		\rule{\linewidth}{0.5pt} \\ [-0.65cm]
+		\rule{\linewidth}{0.5pt} \\ [+0.35cm]
+		
+		\makeatletter		
+			\ifdefined\@institution
+				\@institution
+			\fi
+		
+			\ifdefined\@faculty
+				\@faculty
+			\fi
+
+			\hfill \break
+			
+			\ifdefined\@worktype
+				\textbf{\@worktype}
+			\fi
+					
+			\ifdefined\@workname
+				\@workname
+			\fi
+			
+			\ifdefined\@subject						
+				\textbf{по дисциплине}	\\
+				<<\@subject>>
+			\fi
+						
+			\vfill
+			
+			\ifdefined\@author
+				Выполнил студент группы ИКБО-30-22 \hfill \@author \\
+			\fi
+			
+			\ifdefined\@examiner
+				\hfill \break
+				Приняла ассистент \hfill \@examiner \\
+			\fi
+		\makeatother
+		
+		\hfill \break
+		Практическая работа выполнена
+		\hfill 
+		<<\rule{0.5cm}{0.5pt}>>\rule{2cm}{0.5pt} \the\year г.
+		\hspace{3mm}
+		$\underset{\text{(подпись студента)}}{\rule{4cm}{0.5pt}}$ \\
+		
+		\hfill \break
+		<<Зачтено>>
+		\hfill
+		<<\rule{0.5cm}{0.5pt}>>\rule{2cm}{0.5pt} \the\year г.
+		\hspace{3mm}
+		$\underset{\text{(подпись преподавателя)}}{\rule{4cm}{0.5pt}}$ \\
+		
+		\vspace{1.3cm}
+		
+		% См. \usepackage{fancyhdr} в Преамбула.tex
+		\thispagestyle{titlepagefooter}
+	\end{center}
+\end{titlepage}
