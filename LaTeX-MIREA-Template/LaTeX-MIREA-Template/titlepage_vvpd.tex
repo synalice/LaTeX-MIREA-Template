@@ -1,0 +1,56 @@
+\begin{titlepage}
+	\begin{center}
+		\includegraphics[width=3cm,height=3cm]{MIREA_logo_bw.png}
+		
+		\hfill \break
+		{\small МИНОБРНАУКИ РОССИИ}
+		
+		Федеральное государственное бюджетное образовательное учреждение высшего образования
+		
+		\textbf{<<МИРЭА – Российский технологический университет>>}
+		
+		\textbf{РТУ МИРЭА}
+				
+		\hfill \break
+		
+		\makeatletter		
+		\ifdefined\@institution
+		\@institution
+		\fi
+		
+		\ifdefined\@faculty
+		\@faculty
+		\fi
+		
+		\hfill \break
+				
+		\ifdefined\@worktype
+		\textbf{\@worktype{ }по дисциплине}
+		\fi
+		
+		\textbf{<<Введение в профессиональную деятельность>>}
+
+		\hfill \break
+
+		\ifdefined\@topic						
+		\textbf{Тема: <<\@topic>>}
+		\fi
+		
+		\vfill
+		
+		\ifdefined\@author
+		Выполнил студент группы ИКБО-30-22 \hfill \@author \\
+		\fi
+		
+		\ifdefined\@examiner
+		\hfill \break
+		Принял к.т.н., доцент \hfill \@examiner \\
+		\fi
+		\makeatother
+		
+		\vspace{1.3cm}
+		
+		% См. \RequirePackage{fancyhdr} в mirea.cls
+		\thispagestyle{titlepagefooter}
+	\end{center}
+\end{titlepage}

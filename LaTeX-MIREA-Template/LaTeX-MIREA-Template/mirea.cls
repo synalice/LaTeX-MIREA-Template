@@ -77,6 +77,8 @@
 \setlength{\emergencystretch}{100pt}
 % Меняем нумерацию информационных источников с "[1]" на "1."
 \renewcommand\@biblabel[1]{#1.}
+% Единственные фото на странице должны быть сверху
+\setlength{\@fptop}{0pt}
 % Делаем внешний вид списков аналогичный параграфам
 \RequirePackage{enumitem}
 \setlist{
@@ -121,22 +123,45 @@
 	{\@latex@warning{Empty `thebibliography' environment}}%
 	\endlist
 }
-% Переменные для титульного листа
-\newcommand\institution[1]{\def\@institution{#1}}
-\newcommand\faculty[1]{\def\@faculty{#1}}
-\newcommand\worktype[1]{\def\@worktype{#1}}
-\newcommand\workname[1]{\def\@workname{#1}}
-\newcommand\subject[1]{\def\@subject{#1}}
-\newcommand\examiner[1]{\def\@examiner{#1}}
-% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
-\let\@author\undefined
-\renewcommand\author[1]{\def\@author{#1}}
-% Вставляем в начала любого документа с этим шаблоном титульник и содержание
-\AtBeginDocument{
-	\input{titlepage.tex}
-	\tableofcontents
-	% Пропускаем титульный лист, начинам отсчёт с цифры 2	
-	\setcounter{page}{2}
-}
-% Единственные фото на странице должны быть сверху
-\setlength{\@fptop}{0pt}
+
+% Меняем структуру документа, если нужна работа для Введения в професииональную деательность, вместо отчёта по информатике
+\newif\ifvvpd
+\DeclareOption{vvpd}{\vvpdtrue}
+\ProcessOptions\relax
+
+\ifvvpd % Письменная работа по ВВПД
+	% Переменные для титульного листа
+	\newcommand\institution[1]{\def\@institution{#1}}
+	\newcommand\faculty[1]{\def\@faculty{#1}}
+	\newcommand\worktype[1]{\def\@worktype{#1}}
+	\newcommand\topic[1]{\def\@topic{#1}}
+	\newcommand\examiner[1]{\def\@examiner{#1}}
+	% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
+	\let\@author\undefined
+	\renewcommand\author[1]{\def\@author{#1}}
+	% Вставляем в начала любого документа с этим шаблоном титульник и содержание
+	\AtBeginDocument{
+		\input{titlepage_vvpd.tex}
+		\tableofcontents
+		% Пропускаем титульный лист, начинам отсчёт с цифры 2	
+		\setcounter{page}{2}
+	}
+\else % Отчёт по информатике
+	% Переменные для титульного листа
+	\newcommand\institution[1]{\def\@institution{#1}}
+	\newcommand\faculty[1]{\def\@faculty{#1}}
+	\newcommand\worktype[1]{\def\@worktype{#1}}
+	\newcommand\workname[1]{\def\@workname{#1}}
+	\newcommand\subject[1]{\def\@subject{#1}}
+	\newcommand\examiner[1]{\def\@examiner{#1}}
+	% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
+	\let\@author\undefined
+	\renewcommand\author[1]{\def\@author{#1}}
+	% Вставляем в начала любого документа с этим шаблоном титульник и содержание
+	\AtBeginDocument{
+		\input{titlepage.tex}
+		\tableofcontents
+		% Пропускаем титульный лист, начинам отсчёт с цифры 2	
+		\setcounter{page}{2}
+	}
+\fi
