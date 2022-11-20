@@ -49,6 +49,13 @@
 	\fancyfoot[C]{Москва \the\year}
 }
 \renewcommand{\headrulewidth}{0pt}
+% Междустрочный интервал в титульнике меньше, чем везде 
+\renewenvironment{titlepage}
+{
+	\RequirePackage[onehalfspacing]{setspace}
+}
+{}
+
 % Для поля подписи в титульнике
 \RequirePackage{amsmath}
 % Убирает номер заголовка из нумераций
