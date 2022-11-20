@@ -34,9 +34,8 @@
 \titlespacing*{\chapter}{0pt}{-21pt}{0pt}
 \titleformat{\section}{\bfseries\normalsize}{\thesection}{1em}{}
 \titlespacing{\section}{\parindent}{0pt}{0pt}
-% Полуторный шрифт между строками
-\RequirePackage{setspace}
-\onehalfspacing
+% Полуторный отступ между строками. \RequirePackage[onehalfspacing]{setspace} выставляет не совсем то расстояние мужду строк, подробнее: https://tex.stackexchange.com/questions/65849/confusion-onehalfspacing-vs-spacing-vs-word-vs-the-world
+\renewcommand{\baselinestretch}{1.5}
 % Делать отступ для первого абзатца
 \RequirePackage{indentfirst}
 % Размер отступов абзатцей
@@ -59,8 +58,8 @@
 \counterwithout{figure}{chapter}
 % Настройка формата подписей к таблицам и рисункам
 \RequirePackage{caption}
-\captionsetup[table]{labelsep=endash,format=hang,singlelinecheck=false}
-\captionsetup[figure]{labelsep=endash,format=hang,name=Рисунок}
+\captionsetup[table]{labelsep=endash,format=hang,singlelinecheck=false,font={stretch=1}}
+\captionsetup[figure]{labelsep=endash,format=hang,name=Рисунок,font={stretch=1}}
 % Переименуем список литературы
 \addto{\captionsrussian}{\renewcommand{\bibname}{ИНФОРМАЦИОННЫЕ ИСТОЧНИКИ}}
 % Добавим библиографию в содержание
