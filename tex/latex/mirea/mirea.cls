@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mirea}[2022/11/04 Класс-шаблон для отчетов для МИРЭА]
+\ProvidesClass{mirea}[2022/12/07 Класс-шаблон для отчетов для МИРЭА]
 \LoadClass[14pt]{extreport}
 
 % Шрифт Times New Roman и моно
@@ -30,10 +30,11 @@
 % Стили заголовков
 % https://www.overleaf.com/learn/latex/Sections_and_chapters#titlesec_commands
 \RequirePackage[compact]{titlesec}
-\titleformat{\chapter}{\bfseries\normalsize}{\thechapter}{1em}{\centering}
-\titlespacing*{\chapter}{0pt}{-21pt}{0pt}
-\titleformat{\section}{\bfseries\normalsize}{\thesection}{1em}{}
-\titlespacing{\section}{\parindent}{0pt}{0pt}
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}[block]{\bfseries\normalsize}{\clearpage\hspace{1.25cm}\thechapter}{0.5em}{\centering}
+\titlespacing{\chapter}{0pt}{0pt}{0pt}
+\titleformat{\section}[block]{\bfseries\normalsize}{\hspace{1.25cm}\thesection}{0.5em}{}
+\titlespacing{\section}{0pt}{0pt}{0pt}
 % Полуторный отступ между строками. \RequirePackage[onehalfspacing]{setspace} выставляет не совсем то расстояние мужду строк, подробнее: https://tex.stackexchange.com/questions/65849/confusion-onehalfspacing-vs-spacing-vs-word-vs-the-world
 \renewcommand{\baselinestretch}{1.5}
 % Делать отступ для первого абзатца
