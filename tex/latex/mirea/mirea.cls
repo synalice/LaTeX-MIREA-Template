@@ -35,6 +35,8 @@
 \titlespacing{\chapter}{0pt}{0pt}{0pt}
 \titleformat{\section}[block]{\bfseries\normalsize}{\hspace{1.25cm}\thesection}{0.5em}{}
 \titlespacing{\section}{0pt}{0pt}{0pt}
+\titleformat{\subsection}[block]{\bfseries\normalsize}{\hspace{1.25cm}\thesubsection}{0.5em}{}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
 % Полуторный отступ между строками. \RequirePackage[onehalfspacing]{setspace} выставляет не совсем то расстояние мужду строк, подробнее: https://tex.stackexchange.com/questions/65849/confusion-onehalfspacing-vs-spacing-vs-word-vs-the-world
 \renewcommand{\baselinestretch}{1.5}
 % Делать отступ для первого абзатца
