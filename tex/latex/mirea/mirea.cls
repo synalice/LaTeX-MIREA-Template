@@ -27,6 +27,22 @@
 % "Cодержание" поцентру и жирным
 \renewcommand{\cfttoctitlefont}{\normalfont\normalsize}
 \renewcommand{\cftaftertoctitle}{\hfill\hfill}
+% Убрать горизонтальные и вертикальные отступы в содержании
+\setlength{\cftbeforechapskip}{0pt}
+\setlength{\cftsecindent}{0pt}
+\setlength{\cftsubsecindent}{0pt}
+\setlength{\cftsubsubsecindent}{0pt}
+% Убрать отступы в содержании на новой строке у длинных заголовков
+\setlength{\cftchapnumwidth}{0pt}
+\renewcommand{\cftchapaftersnumb}{\hspace{1.5em}}
+\setlength{\cftsecnumwidth}{0pt}
+\renewcommand{\cftsecaftersnumb}{\hspace{2.3em}}
+\setlength{\cftsubsecnumwidth}{0pt}
+\renewcommand{\cftsubsecaftersnumb}{\hspace{3.2em}}
+\setlength{\cftsubsubsecnumwidth}{0pt}
+\renewcommand{\cftsubsubsecaftersnumb}{\hspace{4.1em}}
+% Добавить больше точек в содержании
+\renewcommand{\cftdotsep}{3}
 % Стили заголовков
 % https://www.overleaf.com/learn/latex/Sections_and_chapters#titlesec_commands
 \RequirePackage[compact]{titlesec}
@@ -91,8 +107,7 @@
 % Делаем внешний вид списков аналогичный параграфам
 \RequirePackage{enumitem}
 \setlist{
-	nolistsep,
-	listparindent=\parindent,
+	nosep,
 	labelindent=\parindent,
 	leftmargin=0pt,
 	align=left,
