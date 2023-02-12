@@ -148,29 +148,22 @@
 	\endlist
 }
 
+% Дефолтный стиль класса
+\newif\ifinf
+\DeclareOption{inf}{\inftrue}
+% Благодаря данной строке, если ничего не указать в качестве опций класса (\documentclass[<опции>]{<класс>}), то будет использован стиль отчета по информатике 
+\ExecuteOptions{inf}
 % Меняем структуру документа, если нужна работа для Введения в професииональную деательность, вместо отчёта по информатике
 \newif\ifvvpd
-\DeclareOption{vvpd}{\vvpdtrue}
+\DeclareOption{vvpd}{\vvpdtrue\inffalse}
+% Меняем структуру документа, если нужен отчет по СИАОД, вместо отчёта по информатике
+\newif\ifsiaod
+\DeclareOption{siaod}{\siaodtrue\inffalse}
+% Без данной строки указанные выше \DeclareOption не будут работать
 \ProcessOptions\relax
 
-\ifvvpd % Письменная работа по ВВПД
-	% Переменные для титульного листа
-	\newcommand\institution[1]{\def\@institution{#1}}
-	\newcommand\faculty[1]{\def\@faculty{#1}}
-	\newcommand\worktype[1]{\def\@worktype{#1}}
-	\newcommand\topic[1]{\def\@topic{#1}}
-	\newcommand\examiner[1]{\def\@examiner{#1}}
-	% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
-	\let\@author\undefined
-	\renewcommand\author[1]{\def\@author{#1}}
-	% Вставляем в начала любого документа с этим шаблоном титульник и содержание
-	\AtBeginDocument{
-		\input{titlepage_vvpd.tex}
-		\tableofcontents
-		% Пропускаем титульный лист, начинам отсчёт с цифры 2	
-		\setcounter{page}{2}
-	}
-\else % Отчёт по информатике
+% Отчёт по информатике
+\ifinf
 	% Переменные для титульного листа
 	\newcommand\institution[1]{\def\@institution{#1}}
 	\newcommand\faculty[1]{\def\@faculty{#1}}
@@ -184,6 +177,43 @@
 	% Вставляем в начала любого документа с этим шаблоном титульник и содержание
 	\AtBeginDocument{
 		\input{titlepage.tex}
+		\tableofcontents
+		% Пропускаем титульный лист, начинам отсчёт с цифры 2	
+		\setcounter{page}{2}
+	}
+\fi
+
+% Отчет для СИАОД
+\ifsiaod
+	% Переменные для титульного листа
+	\newcommand\worknum[1]{\def\@worknum{#1}}
+	\newcommand\topic[1]{\def\@topic{#1}}
+	% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
+	\let\@author\undefined
+	\renewcommand\author[1]{\def\@author{#1}}
+	% Вставляем в начала любого документа с этим шаблоном титульник и содержание
+	\AtBeginDocument{
+		\input{titlepage_siaod.tex}
+		\tableofcontents
+		% Пропускаем титульный лист, начинам отсчёт с цифры 2	
+		\setcounter{page}{2}
+	}
+\fi
+
+% Письменная работа по ВВПД
+\ifvvpd
+	% Переменные для титульного листа
+	\newcommand\institution[1]{\def\@institution{#1}}
+	\newcommand\faculty[1]{\def\@faculty{#1}}
+	\newcommand\worktype[1]{\def\@worktype{#1}}
+	\newcommand\topic[1]{\def\@topic{#1}}
+	\newcommand\examiner[1]{\def\@examiner{#1}}
+	% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
+	\let\@author\undefined
+	\renewcommand\author[1]{\def\@author{#1}}
+	% Вставляем в начала любого документа с этим шаблоном титульник и содержание
+	\AtBeginDocument{
+		\input{titlepage_vvpd.tex}
 		\tableofcontents
 		% Пропускаем титульный лист, начинам отсчёт с цифры 2	
 		\setcounter{page}{2}
