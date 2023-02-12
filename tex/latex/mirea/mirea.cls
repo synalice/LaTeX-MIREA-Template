@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mirea}[2022/12/07 Класс-шаблон для отчетов для МИРЭА]
+\ProvidesClass{mirea}[2023/02/12 Класс-шаблон для отчетов для МИРЭА]
 \LoadClass[14pt]{extreport}
 
 % Шрифт Times New Roman и моно
