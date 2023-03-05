@@ -64,13 +64,6 @@
 	\fancyfoot[C]{Москва \the\year}
 }
 \renewcommand{\headrulewidth}{0pt}
-% Междустрочный интервал в титульнике меньше, чем везде 
-\renewenvironment{titlepage}
-{
-	\RequirePackage[onehalfspacing]{setspace}
-}
-{}
-
 % Для поля подписи в титульнике
 \RequirePackage{amsmath}
 % Убирает номер заголовка из нумераций
@@ -155,6 +148,9 @@
 % Меняем структуру документа, если нужен отчет по СИАОД, вместо отчёта по информатике
 \newif\ifsiaod
 \DeclareOption{siaod}{\siaodtrue\inffalse}
+% Меняем структуру документа, если нужна работа без титульного листа и содержания
+\newif\ifempty
+\DeclareOption{empty}{\emptytrue\inffalse}
 % Без данной строки указанные выше \DeclareOption не будут работать
 \ProcessOptions\relax
 
@@ -181,6 +177,11 @@
 
 % Отчет для СИАОД
 \ifsiaod
+	% Междустрочный интервал в титульнике меньше, чем везде 
+	\renewenvironment{titlepage}
+	{
+		\RequirePackage[onehalfspacing]{setspace}
+	}{}
 	% Переменные для титульного листа
 	\newcommand\worknum[1]{\def\@worknum{#1}}
 	\newcommand\topic[1]{\def\@topic{#1}}
@@ -198,6 +199,11 @@
 
 % Письменная работа по ВВПД
 \ifvvpd
+	% Междустрочный интервал в титульнике меньше, чем везде 
+	\renewenvironment{titlepage}
+	{
+		\RequirePackage[onehalfspacing]{setspace}
+	}{}
 	% Переменные для титульного листа
 	\newcommand\institution[1]{\def\@institution{#1}}
 	\newcommand\faculty[1]{\def\@faculty{#1}}
@@ -214,4 +220,8 @@
 		% Пропускаем титульный лист, начинам отсчёт с цифры 2	
 		\setcounter{page}{2}
 	}
+\fi
+
+% Работа без титульного листа и содержания
+\ifempty
 \fi
