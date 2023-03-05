@@ -46,7 +46,7 @@
 % Стили заголовков
 % https://www.overleaf.com/learn/latex/Sections_and_chapters#titlesec_commands
 \RequirePackage[compact]{titlesec}
-\titleformat{\chapter}[block]{\bfseries\normalsize}{\thechapter}{0.5em}{\centering}
+\titleformat{\chapter}[block]{\bfseries\normalsize}{\hspace{1.25cm}\thechapter}{0.5em}{}
 \titlespacing{\chapter}{0pt}{-1cm}{0pt}
 \titleformat{\section}[block]{\bfseries\normalsize}{\hspace{1.25cm}\thesection}{0.5em}{}
 \titlespacing{\section}{0pt}{0pt}{0pt}
