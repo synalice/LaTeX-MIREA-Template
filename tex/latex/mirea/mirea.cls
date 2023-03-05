@@ -22,11 +22,8 @@
 \renewcommand\cftchappagefont{\mdseries}
 % Точки в содержании для \chapter
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
-% Переименовывание "оглавления" в "содержание"
-\addto\captionsrussian{\renewcommand{\contentsname}{\textbf{СОДЕРЖАНИЕ}}}
-% "Cодержание" поцентру и жирным
-\renewcommand{\cfttoctitlefont}{\normalfont\normalsize}
-\renewcommand{\cftaftertoctitle}{\hfill\hfill}
+% Переименовывание "оглавления" в "содержание", поцентру и жирным
+\addto\captionsrussian{\renewcommand{\contentsname}{\hfill\textbf{СОДЕРЖАНИЕ}\hfill}}
 % Убрать горизонтальные и вертикальные отступы в содержании
 \setlength{\cftbeforechapskip}{0pt}
 \setlength{\cftsecindent}{0pt}
