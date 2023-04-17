@@ -50,11 +50,11 @@
 \titleformat{\subsection}[block]{\bfseries\normalsize}{\hspace{1.25cm}\thesubsection}{0.5em}{}
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
 
-\titleformat{name=\chapter,numberless}[block]{\bfseries\normalsize}{}{0.5em}{\centering}
+\titleformat{name=\chapter,numberless}[block]{\bfseries\normalsize}{}{0em}{\centering}
 \titlespacing{name=\chapter,numberless}{0pt}{-1cm}{0pt}
-\titleformat{name=\section,numberless}[block]{\bfseries\normalsize}{\hspace{1.25cm}}{0.5em}{}
+\titleformat{name=\section,numberless}[block]{\bfseries\normalsize}{\hspace{1.25cm}}{0em}{}
 \titlespacing{name=\section,numberless}{0pt}{0pt}{0pt}
-\titleformat{name=\subsection,numberless}[block]{\bfseries\normalsize}{\hspace{1.25cm}}{0.5em}{}
+\titleformat{name=\subsection,numberless}[block]{\bfseries\normalsize}{\hspace{1.25cm}}{0em}{}
 \titlespacing{name=\subsection,numberless}{0pt}{0pt}{0pt}
 
 % Полуторный отступ между строками. \RequirePackage[onehalfspacing]{setspace} выставляет не совсем то расстояние мужду строк, подробнее: https://tex.stackexchange.com/questions/65849/confusion-onehalfspacing-vs-spacing-vs-word-vs-the-world
