@@ -1,0 +1,61 @@
+% Все переменные (начинаются с \@) задаются в файле mirea.cls
+
+\begin{titlepage}
+	\begin{center}
+		\includegraphics[width=3cm,height=3cm]{MIREA_logo_bw.png}
+		
+		\hfill \break
+		{\small МИНОБРНАУКИ РОССИИ}
+		
+		Федеральное государственное бюджетное образовательное учреждение высшего образования
+		
+		\textbf{<<МИРЭА – Российский технологический университет>>}
+		
+		\textbf{РТУ МИРЭА}
+		
+		\rule{\linewidth}{0.5pt} \\ [-0.65cm]
+		\rule{\linewidth}{0.5pt} \\ [+0.35cm]
+		
+		\textbf{\huge{Институт информационных технологий}}
+		
+		\vspace{0.5cm}
+		
+		КАФЕДРА ИНСТРУМЕТНАЛЬНОГО И ПРИКЛАДНОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ (ИиППО)
+		
+		\rule{\linewidth}{0.5pt}
+		
+		ПРАКТИЧЕСКИЕ РАБОТЫ \\ ПО ДИСЦИПЛИНЕ <<Программирование на языке Джава>>		
+		
+		\vspace{1.5cm}
+		
+		\makeatletter				
+		
+		\ifdefined\@author
+		\ifdefined\@group
+		Выполнил студент группы \hfill \@group \hfill \@author \\
+		\fi
+		
+		\ifdefined\@teacher
+		Принял старший преподаватель \hfill \@teacher \\
+		\fi
+		
+		\hfill \break
+		Практические работы выполнены
+		\hfill 
+		<<\rule{0.5cm}{0.5pt}>>\rule{2cm}{0.5pt} \the\year г.
+
+		\hfill \break
+		Зачтено
+		\hfill 
+		<<\rule{0.5cm}{0.5pt}>>\rule{2cm}{0.5pt} \the\year г.
+
+		
+		\makeatother
+		
+		\vspace{4cm}
+		
+		% См. \RequirePackage{fancyhdr} в mirea.cls
+		\thispagestyle{titlepagefooter}
+	\end{center}
+	\clearpage
+\end{titlepage}
