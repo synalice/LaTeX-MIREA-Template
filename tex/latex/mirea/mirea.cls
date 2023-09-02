@@ -40,6 +40,15 @@
 \renewcommand{\cftsubsubsecaftersnumb}{\hspace{4.1em}}
 % Добавить больше точек в содержании
 \renewcommand{\cftdotsep}{3}
+% Гиперссылки в оглавлении
+\RequirePackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
 % Стили заголовков
 % https://www.overleaf.com/learn/latex/Sections_and_chapters#titlesec_commands
 \RequirePackage[compact]{titlesec}
