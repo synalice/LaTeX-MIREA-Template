@@ -33,8 +33,11 @@
 		\makeatletter				
 		
 		\ifdefined\@author
-		\ifdefined\@group
-		Выполнил студент группы \hfill \@group \hfill \@author \\
+		Выполнил студент
+			\ifdefined\@group
+			группы \hfill \@group
+			\fi
+		\hfill \@author \\
 		\fi
 		
 		\ifdefined\@teacher

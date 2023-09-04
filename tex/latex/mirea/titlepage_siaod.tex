@@ -34,7 +34,10 @@
 		
 		\ifdefined\@author
 		Выполнил студент \hfill \@author \\
-		Группа \hfill ИКБО-30-22 
+		\fi
+		
+		\ifdefined\@group
+		Группа \hfill \@group 
 		\fi
 		
 		\makeatother

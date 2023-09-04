@@ -43,7 +43,11 @@
 			\vfill
 			
 			\ifdefined\@author
-				Выполнил студент группы ИКБО-30-22 \hfill \@author \\
+				Выполнил студент
+					\ifdefined\@group
+					группы \@group
+					\fi
+				\hfill \@author \\
 			\fi
 			
 			\ifdefined\@examiner

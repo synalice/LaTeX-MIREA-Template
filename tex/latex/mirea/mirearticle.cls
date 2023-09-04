@@ -9,10 +9,6 @@
 % Отступы по ГОСТУ
 \RequirePackage[
 	a4paper,
-%	top=2cm,
-%	bottom=2cm,
-%	left=3cm,
-%	right=1.5cm,
 ]{geometry}
 % Поддержка русского языка
 \RequirePackage[russian]{babel}

@@ -183,6 +183,7 @@
 	\newcommand\workname[1]{\def\@workname{#1}}
 	\newcommand\subject[1]{\def\@subject{#1}}
 	\newcommand\examiner[1]{\def\@examiner{#1}}
+	\newcommand\group[1]{\def\@group{#1}}
 	% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
 	\let\@author\undefined
 	\renewcommand\author[1]{\def\@author{#1}}
@@ -205,6 +206,7 @@
 	% Переменные для титульного листа
 	\newcommand\worknum[1]{\def\@worknum{#1}}
 	\newcommand\topic[1]{\def\@topic{#1}}
+	\newcommand\group[1]{\def\@group{#1}}
 	% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
 	\let\@author\undefined
 	\renewcommand\author[1]{\def\@author{#1}}
@@ -230,6 +232,7 @@
 	\newcommand\worktype[1]{\def\@worktype{#1}}
 	\newcommand\topic[1]{\def\@topic{#1}}
 	\newcommand\examiner[1]{\def\@examiner{#1}}
+	\newcommand\group[1]{\def\@group{#1}}
 	% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
 	\let\@author\undefined
 	\renewcommand\author[1]{\def\@author{#1}}
