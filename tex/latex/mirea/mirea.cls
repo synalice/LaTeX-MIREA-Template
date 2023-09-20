@@ -171,6 +171,9 @@
 % Меняем структуру документа, если нужна работа без титульного листа и содержания
 \newif\ifempty
 \DeclareOption{empty}{\emptytrue\inffalse}
+% Меняем структуру документа, если нужен отчет по Архитектура операционных систем мобильных устройств, вместо отчёта по информатике
+\newif\ifaosmu
+\DeclareOption{aosmu}{\aosmutrue\inffalse}
 % Без данной строки указанные выше \DeclareOption не будут работать
 \ProcessOptions\relax
 
@@ -247,26 +250,49 @@
 
 % Отчет для Java
 \ifjava
-% Междустрочный интервал в титульнике меньше, чем везде 
-\renewenvironment{titlepage}
-{
-	\RequirePackage[onehalfspacing]{setspace}
-}{}
-% Переменные для титульного листа
-\newcommand\teacher[1]{\def\@teacher{#1}}
-\newcommand\group[1]{\def\@group{#1}}
-% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
-\let\@author\undefined
-\renewcommand\author[1]{\def\@author{#1}}
-% Вставляем в начала любого документа с этим шаблоном титульник и содержание
-\AtBeginDocument{
-	\input{titlepage_java.tex}
-	\tableofcontents
-	% Пропускаем титульный лист, начинам отсчёт с цифры 2	
-	\setcounter{page}{2}
-}
+	% Междустрочный интервал в титульнике меньше, чем везде 
+	\renewenvironment{titlepage}
+	{
+		\RequirePackage[onehalfspacing]{setspace}
+	}{}
+	% Переменные для титульного листа
+	\newcommand\teacher[1]{\def\@teacher{#1}}
+	\newcommand\group[1]{\def\@group{#1}}
+	% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
+	\let\@author\undefined
+	\renewcommand\author[1]{\def\@author{#1}}
+	% Вставляем в начала любого документа с этим шаблоном титульник и содержание
+	\AtBeginDocument{
+		\input{titlepage_java.tex}
+		\tableofcontents
+		% Пропускаем титульный лист, начинам отсчёт с цифры 2	
+		\setcounter{page}{2}
+	}
 \fi
 
 % Работа без титульного листа и содержания
 \ifempty
+\fi
+
+% Отчет для Архитектура операционных систем мобильных устройств
+\ifaosmu
+	% Междустрочный интервал в титульнике меньше, чем везде 
+	\renewenvironment{titlepage}
+	{
+		\RequirePackage[onehalfspacing]{setspace}
+	}{}
+	% Переменные для титульного листа
+	\newcommand\worknum[1]{\def\@worknum{#1}}
+	\newcommand\examiner[1]{\def\@examiner{#1}}
+	\newcommand\group[1]{\def\@group{#1}}
+	% Макро \@author и команда \author по умолчанию заданы ЛаТеКом, поэтому мы удалим их, чтобы, если пользователь шаблона не задал поле автора в своем файле, в титульном листе не отображались лишние строки текста.
+	\let\@author\undefined
+	\renewcommand\author[1]{\def\@author{#1}}
+	% Вставляем в начала любого документа с этим шаблоном титульник и содержание
+	\AtBeginDocument{
+		\input{titlepage_aosmu.tex}
+		\tableofcontents
+		% Пропускаем титульный лист, начинам отсчёт с цифры 2	
+		\setcounter{page}{2}
+	}
 \fi

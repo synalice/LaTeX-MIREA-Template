@@ -1,0 +1,54 @@
+% Все переменные (начинаются с \@) задаются в файле mirea.cls
+
+\begin{titlepage}
+	\begin{center}
+		\includegraphics[width=3cm,height=3cm]{MIREA_logo_bw.png}
+		
+		\hfill \break
+		{\small МИНОБРНАУКИ РОССИИ}
+		
+		Федеральное государственное бюджетное образовательное учреждение высшего образования
+		
+		\textbf{<<МИРЭА – Российский технологический университет>>}
+		
+		\textbf{РТУ МИРЭА}
+		
+		\rule{\linewidth}{0.5pt} \\ [-0.65cm]
+		\rule{\linewidth}{0.5pt} \\ [+0.35cm]
+		
+		Институт Информационных технологий 
+		
+		Кафедра Математического обеспечения и стандартизации информационных технологий 
+		
+		\vfill
+		
+		\makeatletter		
+		\ifdefined\@worknum
+			Практическая работа №\@worknum
+		\fi
+		
+		По дисциплине: <<Архитектура операционных систем мобильных устройств>>
+		
+		\vfill
+		
+		\ifdefined\@author
+			\textbf{Студент}
+				\ifdefined\@group
+					\textbf{группы} \@group
+				\fi
+			\hfill \@author \\
+		\fi
+		
+		\ifdefined\@examiner
+			\hfill \break
+			Принял работу \hfill \@examiner \\
+		\fi
+		\makeatother
+			
+		\vfill
+			
+		% См. \RequirePackage{fancyhdr} в mirea.cls
+		\thispagestyle{titlepagefooter}
+	\end{center}
+	\clearpage
+\end{titlepage}
